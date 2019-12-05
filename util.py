@@ -1,7 +1,6 @@
 from numpy.random import randint
 
 import config
-from config import STAT_MIN, STAT_MAX
 from person import Person
 
 
@@ -17,8 +16,15 @@ names = {
 name_length = len(f_names)
 
 
-def random_person(age: int = None, sex: int = None):
+def random_person(age: int = None, sex: int = None, start: int = config.NEUTRAL_START):
     person = Person()
+
+    low = config.STAT_MIN
+    high = config.STAT_MAX + 1
+    if start == config.BAD_START:
+        high = config.STAT_MAX // 2 + 1
+    elif start == config.GOOD_START:
+        low = config.STAT_MAX // 2
 
     # Basic information
     if age is None:
@@ -30,15 +36,15 @@ def random_person(age: int = None, sex: int = None):
     person.name = names[sex][randint(0, name_length)]
 
     # Personality information
-    person.rebellious = randint(STAT_MIN, STAT_MAX+1)
-    person.ambition = randint(STAT_MIN, STAT_MAX+1)
-    person.hardworking = randint(STAT_MIN, STAT_MAX+1)
+    person.rebellious = randint(low, high)
+    person.ambition = randint(low, high)
+    person.hardworking = randint(low, high)
     person.life_goal = randint(0, 1+1)
 
     # Complex information
-    person.education = randint(STAT_MIN, STAT_MAX+1)
-    person.income = randint(STAT_MIN, STAT_MAX+1)
-    person.lifestyle = randint(STAT_MIN, STAT_MAX+1)
-    person.parenting = randint(STAT_MIN, STAT_MAX+1)
+    person.education = randint(low, high)
+    person.income = randint(low, high)
+    person.lifestyle = randint(low, high)
+    person.parenting = randint(low, high)
 
     return person
