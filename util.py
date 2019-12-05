@@ -36,19 +36,19 @@ class PersonUtil:
         person.sex = sex
         person.name = self.random_name(sex)
 
-        # Personality information
+        # First order information
         person.rebellious = randint(low, high)
         person.ambition = randint(low, high)
         person.hardworking = randint(low, high)
         person.life_goal = randint(0, 2)
+        person.lifestyle = randint(low, high)
 
-        # Complex information
+        # Second order information
         person.education = randint(low, high)
         person.income = randint(low, high)
-        person.lifestyle = randint(low, high)
+        person.parenting_desire = randint(low, high)
         person.parenting = randint(low, high)
-
-        person.longevity = randint(high//2, high)
+        person.longevity = self.child_longevity(person)
 
         return person
 
@@ -100,5 +100,6 @@ class PersonUtil:
     def child_longevity(self, child):
         # lifestyle, income
         stat = child.lifestyle * 0.5 + child.income * 0.5
-        age = int(stat / config.STAT_MAX * config.MAX_AGE)
-        return max(age, 45);
+        age1 = int(stat / (stat + 15) * config.MAX_AGE)  # for average stats
+        age2 = int(stat / config.STAT_MAX * config.MAX_AGE)  # for worse stats
+        return max(age1, age2, 65)
