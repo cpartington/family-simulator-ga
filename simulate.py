@@ -1,6 +1,7 @@
 import argparse
 
 import config
+from family import Family
 from util import PersonUtil
 
 
@@ -13,9 +14,15 @@ class Simulator:
         for _ in range(start_families):
             husband = self.util.random_person(sex=config.MALE, start=start_quality)
             wife = self.util.random_person(sex=config.FEMALE, start=start_quality)
+            family = Family(husband, wife)
+            self.families += [family]
             print(husband)
             print(wife)
             print()
+
+        for i in range(num_gens):
+            # Generate children for each family
+            # Match children between families (siblings can't match)
 
     def simulate(self):
         pass
@@ -23,7 +30,7 @@ class Simulator:
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-m', '--match-method', choices=['similarity', 'quality', 'opposites'])
+    parser.add_argument('-m', '--match-method', choices=['similarity', 'quality', 'opposites', 'hybrid'])
     parser.add_argument('-n', '--start-families', type=int, default=config.NUM_FAMILIES,
                         help='initial family count')
     parser.add_argument('-q', '--start-quality', type=int, choices=[-1, 0, 1], default=config.NEUTRAL_START,

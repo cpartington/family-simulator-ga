@@ -93,7 +93,6 @@ class PersonUtil:
         return min(max(subfinal, config.STAT_MIN), config.STAT_MAX)
 
     def child_parenting(self, mother, father, child):
-        # parents' parenting, parenting desire, hardworking
         p_parenting = (mother.parenting + father.parenting) / 2
         return int(p_parenting * 0.3 + child.parenting_desire * 0.4 + child.hardworking * 0.3)
 

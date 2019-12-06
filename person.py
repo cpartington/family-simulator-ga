@@ -40,6 +40,9 @@ class Person:
         q = self.ambition + self.hardworking + self.education + self.lifestyle + self.parenting
         return q
 
+    def get_happiness(self):
+        pass
+
     def __str__(self):
         return '{}: Age: {} Sex: {} Longevity: {}y\n' \
                '   Rebellion: {} Ambition: {} Hardworking: {}\n' \
