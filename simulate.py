@@ -2,6 +2,7 @@ import argparse
 
 import config
 from family import Family
+from person import Person
 from util import PersonUtil
 
 
@@ -16,12 +17,15 @@ class Simulator:
             wife = self.util.random_person(sex=config.FEMALE, start=start_quality)
             family = Family(husband, wife)
             self.families += [family]
-            print(husband)
-            print(wife)
-            print()
 
         for i in range(num_gens):
             # Generate children for each family
+            for family in self.families:
+                for _ in range(self.util.num_children(family.wife, family.husband)):
+                    child = Person()
+                    child.init_self(self.util, family.wife, family.husband)
+                    family.add_child(child)
+                print(family)
             # Match children between families (siblings can't match)
 
     def simulate(self):

@@ -50,6 +50,8 @@ class PersonUtil:
         person.parenting = randint(low, high)
         person.longevity = self.child_longevity(person)
 
+        person.get_happiness()
+
         return person
 
     def random_adult_age(self):
@@ -58,8 +60,9 @@ class PersonUtil:
     def random_sex(self):
         return randint(config.FEMALE, config.MALE + 1)
 
-    def random_attribute(self):
-        return randint(config.STAT_MIN, config.STAT_MAX + 1)
+    def random_rebellion(self):
+        # random number between [-STAT_MAX, +STAT_MAX]
+        return randint(config.STAT_MIN, config.STAT_MAX * 2 + 1) - config.STAT_MAX
 
     def random_name(self, sex):
         return self.names[sex][randint(0, self.num_names)]
@@ -77,6 +80,8 @@ class PersonUtil:
             return randint(0, 2)
         if r > config.STAT_MAX * 3/4:
             return (p1 + 1) % 2
+        else:
+            return p1
 
     def child_education(self, mother, father, child):
         p_education = (mother.education + father.education) / 2
@@ -102,3 +107,7 @@ class PersonUtil:
         age1 = int(stat / (stat + 15) * config.MAX_AGE)  # for average stats
         age2 = int(stat / config.STAT_MAX * config.MAX_AGE)  # for worse stats
         return max(age1, age2, 65)
+
+    def num_children(self, mother, father):
+        p_desire = (mother.parenting_desire + father.parenting_desire) / 2
+        return int(p_desire / 100 * 4.5)
