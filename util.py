@@ -67,18 +67,19 @@ class PersonUtil:
     def random_name(self, sex):
         return self.names[sex][randint(0, self.num_names)]
 
-    def child_attribute(self, p1, p2, r=config.STAT_MID):
+    def child_attribute(self, p1, p2, r=None):
         avg = (p1 + p2) / 2
-        jitter = randint(0, config.JITTER * 2 - 1) - config.JITTER
-        if r > config.STAT_MAX * 3/4:
-            jitter *= 2
+        if r is None:
+            jitter = randint(0, config.JITTER * 2 - 1) - config.JITTER
+        else:
+            jitter = r * 0.5
         subfinal = int(avg + jitter)
         return min(max(subfinal, config.STAT_MIN), config.STAT_MAX)
 
     def child_life_goal(self, p1, p2, r):
         if p1 != p2:
             return randint(0, 2)
-        if r > config.STAT_MAX * 3/4:
+        if abs(r) > config.STAT_MAX * 3/4:
             return (p1 + 1) % 2
         else:
             return p1
@@ -110,4 +111,4 @@ class PersonUtil:
 
     def num_children(self, mother, father):
         p_desire = (mother.parenting_desire + father.parenting_desire) / 2
-        return int(p_desire / 100 * 4.5)
+        return int(p_desire / 100 * 5)

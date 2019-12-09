@@ -12,6 +12,10 @@ NUM_GENS = 3
 
 GOAL_LUXURY = 0
 GOAL_MEANING = 1
+GOAL_TO_STR = {
+    GOAL_LUXURY: 'Luxury',
+    GOAL_MEANING: 'Meaning'
+}
 
 STAT_MIN = 1
 STAT_MAX = 100

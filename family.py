@@ -12,8 +12,8 @@ class Family:
         self.children += [child]
 
     def __str__(self):
-        return 'Parents:\n' \
+        return 'Parents (Family Line {}):\n' \
                '{}{}' \
                'Children:\n' \
                '{}'\
-            .format(self.husband, self.wife, ''.join([str(c) for c in self.children]))
+            .format(self.family_line, self.husband, self.wife, ''.join([str(c) for c in self.children]))

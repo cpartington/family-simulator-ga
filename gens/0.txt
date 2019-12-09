@@ -1,0 +1,42 @@
+Parents (Family Line 1):
+  Vincent (1): Longevity: 65y, Sex: 1, Happiness: 121, Rebellion: 73
+    Ambition: 68, Hardworking: 52, Life goal: Meaning, Lifestyle: 16, Education: 72
+    Income: 42, Parenting Desire: 22, Parenting Quality: 82
+  Faith (1): Longevity: 80y, Sex: 0, Happiness: 206, Rebellion: 4
+    Ambition: 22, Hardworking: 98, Life goal: Luxury, Lifestyle: 95, Education: 75
+    Income: 67, Parenting Desire: 41, Parenting Quality: 92
+Children:
+  Brynlee (1): Longevity: 86y, Sex: 0, Happiness: 228, Rebellion: 93
+    Ambition: 45, Hardworking: 100, Life goal: Luxury, Lifestyle: 100, Education: 82
+    Income: 82, Parenting Desire: 1, Parenting Quality: 56
+
+Parents (Family Line 2):
+  Xander (2): Longevity: 80y, Sex: 1, Happiness: 168, Rebellion: 25
+    Ambition: 62, Hardworking: 13, Life goal: Luxury, Lifestyle: 75, Education: 47
+    Income: 93, Parenting Desire: 76, Parenting Quality: 17
+  Julianna (2): Longevity: 65y, Sex: 0, Happiness: 96, Rebellion: 34
+    Ambition: 65, Hardworking: 23, Life goal: Luxury, Lifestyle: 32, Education: 66
+    Income: 24, Parenting Desire: 59, Parenting Quality: 23
+Children:
+  Emiliano (2): Longevity: 65y, Sex: 1, Happiness: 70, Rebellion: -84
+    Ambition: 60, Hardworking: 1, Life goal: Meaning, Lifestyle: 11, Education: 29
+    Income: 25, Parenting Desire: 62, Parenting Quality: 31
+  Oliver (2): Longevity: 78y, Sex: 1, Happiness: 162, Rebellion: 67
+    Ambition: 56, Hardworking: 51, Life goal: Luxury, Lifestyle: 87, Education: 54
+    Income: 53, Parenting Desire: 1, Parenting Quality: 21
+  Alan (2): Longevity: 65y, Sex: 1, Happiness: 70, Rebellion: -82
+    Ambition: 62, Hardworking: 1, Life goal: Meaning, Lifestyle: 12, Education: 29
+    Income: 25, Parenting Desire: 62, Parenting Quality: 31
+
+Parents (Family Line 3):
+  Elias (3): Longevity: 74y, Sex: 1, Happiness: 137, Rebellion: 54
+    Ambition: 56, Hardworking: 22, Life goal: Meaning, Lifestyle: 66, Education: 53
+    Income: 46, Parenting Desire: 58, Parenting Quality: 50
+  Delaney (3): Longevity: 69y, Sex: 0, Happiness: 104, Rebellion: 8
+    Ambition: 87, Hardworking: 40, Life goal: Luxury, Lifestyle: 13, Education: 10
+    Income: 68, Parenting Desire: 17, Parenting Quality: 16
+Children:
+  Luca (3): Longevity: 68y, Sex: 1, Happiness: 108, Rebellion: -3
+    Ambition: 76, Hardworking: 29, Life goal: Meaning, Lifestyle: 38, Education: 36
+    Income: 38, Parenting Desire: 70, Parenting Quality: 46
+

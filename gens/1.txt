@@ -1,0 +1,12 @@
+Parents (Family Line 4):
+  Alan (2): Longevity: 65y, Sex: 1, Happiness: 70, Rebellion: -82
+    Ambition: 62, Hardworking: 1, Life goal: Meaning, Lifestyle: 12, Education: 29
+    Income: 25, Parenting Desire: 62, Parenting Quality: 31
+  Brynlee (1): Longevity: 86y, Sex: 0, Happiness: 228, Rebellion: 93
+    Ambition: 45, Hardworking: 100, Life goal: Luxury, Lifestyle: 100, Education: 82
+    Income: 82, Parenting Desire: 1, Parenting Quality: 56
+Children:
+  Isaiah (2): Longevity: 79y, Sex: 1, Happiness: 188, Rebellion: 58
+    Ambition: 51, Hardworking: 79, Life goal: Luxury, Lifestyle: 85, Education: 66
+    Income: 67, Parenting Desire: 1, Parenting Quality: 37
+

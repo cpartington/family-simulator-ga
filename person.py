@@ -1,4 +1,6 @@
-from config import INTERACTION_COEFFICIENT, GOAL_LUXURY
+import uuid
+from config import INTERACTION_COEFFICIENT, GOAL_LUXURY, GOAL_TO_STR
+
 
 def interaction(val1, val2):
     return INTERACTION_COEFFICIENT * val1 * val2
@@ -7,6 +9,8 @@ def interaction(val1, val2):
 class Person:
     def __init__(self):
         # Basic information
+        self.pid: uuid = uuid.uuid4()
+        self.fid: int = -1
         self.age: int = -1
         self.sex: int = -1
         self.name: str = ''
@@ -28,6 +32,7 @@ class Person:
         self.happiness: int = -1
 
     def init_self(self, util, mother, father):
+        self.fid = father.fid
         self.age = util.random_adult_age()
         self.sex = util.random_sex()
         self.name = util.random_name(self.sex)
@@ -63,10 +68,9 @@ class Person:
         #               self.happiness))
 
     def __str__(self):
-        return '  {}: Age: {} Sex: {} Longevity: {}y Happiness: {}\n' \
-               '    Rebellion: {} Ambition: {} Hardworking: {}\n' \
-               '    Life goal: {} Lifestyle: {} Education: {}\n' \
-               '    Income: {} Parenting Desire: {} Quality: {}\n'\
-            .format(self.name, self.age, self.sex, self.longevity, self.happiness, self.rebellious, self.ambition,
-                    self.hardworking, self.life_goal, self.lifestyle, self.education, self.income,
+        return '  {} ({}): Longevity: {}y, Sex: {}, Happiness: {}, Rebellion: {}\n' \
+               '    Ambition: {}, Hardworking: {}, Life goal: {}, Lifestyle: {}, Education: {}\n' \
+               '    Income: {}, Parenting Desire: {}, Parenting Quality: {}\n'\
+            .format(self.name, self.fid, self.longevity, self.sex, self.happiness, self.rebellious, self.ambition,
+                    self.hardworking, GOAL_TO_STR[self.life_goal], self.lifestyle, self.education, self.income,
                     self.parenting_desire, self.parenting)
